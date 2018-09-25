@@ -1,27 +1,58 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <script src="jquery.js"></script>
     <script src="data_generator.js"></script>
+    <script src="script.js"></script>
+    <link href="main.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel="stylesheet">
   </head>
+
   <body>
-    <script>
 
-      $(document).ready(function(){
-        var $body = $('body');
-        $body.html('');
+    <header>
 
-        var index = streams.home.length - 1;
-        while(index >= 0){
-          var tweet = streams.home[index];
-          var $tweet = $('<div></div>');
-          $tweet.text('@' + tweet.user + ': ' + tweet.message);
-          $tweet.appendTo($body);
-          index -= 1;
-        }
+      <div class="home-wrapper">
+        <img id="home" class="icon" src="images/icons/home.png" alt="home">
+        <h1 class="header-icon-text">home</h1>
+      </div>
 
-      });
+      <div class="notifications-wrapper">
+        <img id="notifications" class="icon" src="images/icons/notifications.png" alt="notifications">
+        <h1 class="header-icon-text">notifications</h1>
+      </div>
 
-    </script>
+      <div class="messages-wrapper">
+        <img id="messages" class="icon" src="images/icons/messages.png" alt="messages">
+        <h1 class="header-icon-text">messages</h1>
+      </div>
+
+      <img class="logo" src="images/icons/logo.png" alt="logo">
+
+      <div class="search-wrapper">
+        <input class="search-input" type="text" id="search-query" placeholder="search barker">
+        <img id="searchImage" src="images/icons/searchIcon.png" alt="searchImage">
+      </div>
+
+      <img id="profilePic" src="images/profilePics/drhack.png" alt="profilePic">
+
+      <button id="bark-button">
+        bark
+      </button>
+
+    </header>
+
+    <div class="main-container">
+
+      <button id="recent-button">
+        0 new barks
+      </button>
+           
+      <section class="tweet-container"> </section>
+
+    </div>
+
   </body>
+
 </html>
